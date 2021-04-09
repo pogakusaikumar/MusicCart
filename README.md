@@ -13,3 +13,4 @@ No need of explicit Deployment Descriptor file(web.xml) as Eclipse handles it in
 MusicCart.html is the index file i.e., welcome file for the project.
 As this project is not using realtime database like firebase, you need to create a database and add user table and cart table.
 The user table maintains details of users registered to the website and the cart table cosists of the user's playlist.
+Web Server that is being used is Apache Tomcat Web Server
