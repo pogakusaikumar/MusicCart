@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<style>
+	body{background-image:url("https://wallpapercave.com/wp/wp3413560.jpg");}
+	.nav_1{display:flex;flex-direction:row;background-color:yellow;height:50px;justify-content:space-between;
+	}
+	.nav_1>main{
+		 flex-grow:1;
+	}
+	.nav_1>#l_1{
+	flex-grow:2;padding:10px;position:relative;left:400px;
+	}
+	a{text-decoration:none;
+	}
+	a:hover{background-color:black;color:white;}
+	#i_3,#i_4{position:relative;padding-left:10px;padding-bottom:32px;padding-right:10px;}
+</style>
+</head>
+<body>
+	<div class="nav_1">
+	<main>
+	<a href="ViewProfile" id="i_3">View Profile</a>
+	<a href="./PlayList" id="i_4">PlayList</a>
+	</main>
+	<a href="./LogOut" id="l_1">logout</a>
+	</div>
+	<form action="./Cart">
+	<table>
+	<tr>
+	<td>Play Date</td><td>:</td><td><audio controls src="C:\Users\pogak\Music\PlayDate.mp3"></audio></td><td><input type="checkbox" name="song" value="PlayDate"></td>
+	</tr>
+	<tr>
+	<td>Dusk Till Dawn</td><td>:</td><td><audio controls src="C:\Users\pogak\Music\DuskTillDawn.mp3"></audio></td><td><input type="checkbox" name="song" value="DuskTillDawn"></td>
+	</tr>
+	<tr>
+	<td>Designer Panda</td><td>:</td><td><audio controls src="C:\Users\pogak\Music\DesiignerPanda.mp3"></audio></td><td><input type="checkbox" name="song" value="DesiignerPanda"></td>
+	</tr>
+	<tr>
+	<td>Despacito</td><td>:</td><td><audio controls src="C:\Users\pogak\Music\Despacito.mp3"></audio></td><td><input type="checkbox" name="song" value="Despacito"></td>
+	</tr>
+	<tr>
+	<td>Thunder</td><td>:</td><td><audio controls src="C:\Users\pogak\Music\Thunder.mp3"></audio></td><td><input type="checkbox" name="song" value="Thunder"></td>
+	</tr>
+	<tr>
+	<td>Believer</td><td>:</td><td><audio controls src="C:\Users\pogak\Music\Believer.mp3"></audio></td><td><input type="checkbox" name="song" value="Believer"></td>
+	</tr>
+	<tr>
+	<td>We Don't Talk Anymore</td><td>:</td><td><audio controls src="C:\Users\pogak\Music\WeDon'tTalkAnymore.mp3"></audio></td><td><input type="checkbox" name="song" value="WeDon'tTalkAnymore"></td>
+	</tr>
+	<tr>
+	<td>Moved On</td><td>:</td><td><audio controls src="C:\Users\pogak\Music\MovedOn.mp3"></audio></td><td><input type="checkbox" name="song" value="MovedOn"></td>
+	</tr>
+	<tr>
+	<td>Shape Of You</td><td>:</td><td><audio controls src="C:\Users\pogak\Music\ShapeOfYou.mp3"></audio></td><td><input type="checkbox" name="song" value="ShapeOfYou"></td>
+	</tr>
+	<tr>
+	<td>Sia Cheap Thrills</td><td>:</td><td><audio controls src="C:\Users\pogak\Music\SiaCheapThrills.mp3"></audio></td><td><input type="checkbox" name="song" value="SiaCheapThrills"></td>
+	</tr>
+	<tr>
+	<td colspan="4"><input style="background-color:lightblue;border-radius:10px;width:100px;height:50px;color:white;font-size:20px" type="submit" value="ADD"></td>
+	</tr>
+	</table>
+	</form>
+</body>
+</html>

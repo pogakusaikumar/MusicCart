@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    	  body{background-image:url("https://image.freepik.com/free-vector/white-prism-background-design-vector_53876-86339.jpg");}
+    </style>
+    <script type="text/javascript">
+        function constraint()
+        {
+            username_pattern=/^[a-zA-Z][a-zA-Z0-9_.]+$/;
+            password_pattern=/^[\w@]+$/;
+            if(document.getElementsByName('uname')[0].value.length>=8)
+            {
+                if(document.getElementsByName('pword')[0].value.length>=8)
+                {
+                    if(username_pattern.test(document.getElementsByName('uname')[0].value))
+                    {
+                        if(password_pattern.test(document.getElementsByName('pword')[0].value))
+                        {
+                            return true;
+                        }
+                        else{
+                            alert("invalid password");
+                            return false;
+                        }
+                    }
+                    else{
+                        alert("invalid username");
+                        return false;
+                    }
+                }
+                else{
+                    alert("password should have minimum 8 characters");
+                    return false;
+                }
+            }
+            else
+            {
+                if(document.getElementsByName('pword')[0].value.length>=8)
+                {
+                    alert("username should have minimum 8 characters");
+                    return false;
+                }
+                else{
+                    alert("username and password should have minimum 8 characters");
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="margin-top:20vh;margin-left:36vw;line-height:4vh;width:25vw;height:56vh;border-style:solid;border-width:10px;border-color:dimgray" class="text-center">
+	<h4 class="text-capitalize">sign in</h4>
+	<form action="./Validate" method="post" onsubmit="return constraint()">
+		<table class="table table-borderless mx-auto">
+			<tr>
+				<td align="center"><i class="fa fa-user-circle-o" aria-hidden="true"></i><input class="border-left-0 border-right-0 border-top-0" type="text" name="uname" placeholder="Username"/></td>
+			</tr>
+			<tr>
+				<td align="center"><i class="fa fa-eye-slash" aria-hidden="true"></i><input class="border-left-0 border-right-0 border-top-0" type="password" name="pword" placeholder="Password"/></td>
+			</tr>
+			<tr>
+				<td align="center"><button class="btn btn-success" id="submit" style="width:180px;">Sign In</button></td>
+            </tr>
+            <tr><td align="center"><a class="text-decoration-none" href="verify.html">Forgot Password?</a></td></tr>
+		</table>
+    </form>
+    <hr/>
+        <label>Don't have an account?</label><a href="registration.html" class="text-decoration-none"> Create One</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    	body{background-image:url("https://image.freepik.com/free-vector/white-prism-background-design-vector_53876-86339.jpg");}
+    </style>
+    <script type="text/javascript">
+        function constraint()
+        {
+            username_pattern=/^[a-zA-Z][a-zA-Z0-9_.]+$/;
+            password_pattern=/^[\w@]+$/;
+            phno_pattern=/^(\+)91\d{10}$/;
+            dob_pattern=/^\d{1,2}(\.|\-|\/)\d{1,2}\1\d{4}$/;
+            if(document.getElementsByName('uname')[0].value.length!=0)
+            {
+                if(document.getElementsByName('pword')[0].value==document.getElementsByName('confirmpassword')[0].value)
+                {
+                    if(username_pattern.test(document.getElementsByName('uname')[0].value))
+                    {
+                        if(password_pattern.test(document.getElementsByName('pword')[0].value))
+                        {
+                            if(phno_pattern.test(document.getElementsByName('phonenumber')[0].value))
+                            {
+                                if(dob_pattern.test(document.getElementsByName('dob')[0].value))
+                                {
+                                    return true;
+                                }
+                                else
+                                {
+                                    alert("invalid date-of-birth");
+                                }
+                            }
+                            else
+                            {
+                                if(dob_pattern.test(document.getElementsByName('dob')[0].value))
+                                {
+                                    alert("invalid phoneNumber");
+                                }
+                                else
+                                {
+                                    alert("invalid phoneNumber\ninvalid date-of-birth");
+                                }
+                            }
+                        }
+                        else{
+                            if(phno_pattern.test(document.getElementsByName('phonenumber')[0].value))
+                            {
+                                if(dob_pattern.test(document.getElementsByName('dob')[0].value))
+                                {
+                                    alert("invalid password");
+                                }
+                                else
+                                {
+                                    alert("invalid password\ninvalid date-of-birth");
+                                }
+                            }
+                            else
+                            {
+                                if(dob_pattern.test(document.getElementsByName('dob')[0].value))
+                                {
+                                    alert("invalid password\ninvalid phoneNumber");
+                                }
+                                else
+                                {
+                                    alert("invalid password\ninvalid phoneNumber\ninvalid date-of-birth");
+                                }
+                            }
+                        }
+                    }
+                    else{
+                        if(password_pattern.test(document.getElementsByName('pword')[0].value))
+                        {
+                            if(phno_pattern.test(document.getElementsByName('phonenumber')[0].value))
+                            {
+                                if(dob_pattern.test(document.getElementsByName('dob')[0].value))
+                                {
+                                    alert("invalid username");
+                                }
+                                else
+                                {
+                                    alert("invalid username\ninvalid date-of-birth");
+                                }
+                            }
+                            else
+                            {
+                                if(dob_pattern.test(document.getElementsByName('dob')[0].value))
+                                {
+                                    alert("invalid username\ninvalid phoneNumber");
+                                }
+                                else
+                                {
+                                    alert("invalid username\ninvalid phoneNumber\ninvalid date-of-birth");
+                                }
+                            }
+                        }
+                        else{
+                            if(phno_pattern.test(document.getElementsByName('phonenumber')[0].value))
+                            {
+                                if(dob_pattern.test(document.getElementsByName('dob')[0].value))
+                                {
+                                    alert("invalid username\ninvalid password");
+                                }
+                                else
+                                {
+                                    alert("invalid username\ninvalid password\ninvalid date-of-birth");
+                                }
+                            }
+                            else
+                            {
+                                if(dob_pattern.test(document.getElementsByName('dob')[0].value))
+                                {
+                                    alert("invalid username\ninvalid password\ninvalid phoneNumber");
+                                }
+                                else
+                                {
+                                    alert("invalid username\ninvalid password\ninvalid phoneNumber\ninvalid date-of-birth");
+                                }
+                            }
+                        }
+                    }
+                }
+                else{
+                    alert("password and confirm password should be equal");
+                }
+            }
+            else
+            {
+                if(document.getElementsByName('pword')[0].value==document.getElementsByName('confirmpassword')[0].value)
+                {
+                    alert("username must not be empty");
+                }
+                else{
+                    alert("username must not be empty\npassword and confirm password should be equal");
+                }
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="text-center border border-dark" style="width: 43vw;margin-left:28vw;">
+	    <div class="bg-primary text-white" style="height:5vh;">Register</div>
+	    <form action="./ServletRegister" method="post" onsubmit="return constraint()">
+	    <table class="table table-borderless mx-auto">
+		    <tr>
+                <td><i class="fa fa-user" aria-hidden="true"></i><input type="text" name="fname" placeholder="First Name"/></td>
+                <td><i class="fa fa-user" aria-hidden="true"></i><input type="text" name="lname" placeholder="Last Name"/></td>
+		    </tr>
+		    <tr>
+                <td><i class="fa fa-user-circle-o" aria-hidden="true"></i><input type="text" name="uname" placeholder="Username"/></td>
+                <td><i class="fa fa-phone" aria-hidden="true"></i>
+                <input type="text" name="phonenumber" placeholder="Phone Number"/></td>
+		    </tr>
+	    	<tr>
+		    	<td colspan="2"><i class="fa fa-envelope" aria-hidden="true"></i>
+		    	<input style="width:480px;" type="email" name="email" placeholder="Your E-Mail Address"/></td>
+	    	</tr>
+		    <tr>
+                <td><i class="fa fa-venus-mars" aria-hidden="true"></i>
+                    <select name="gender" style="width:200px;">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </td>
+                <td><i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                    <input type="text" name="dob" placeholder="Date-Of-Birth">
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-globe" aria-hidden="true"></i>
+                    <select name="country" style="width:200px;">
+                        <option value="india">India</option>
+                        <option value="america">USA</option>
+                        <option value="uk">UK</option>
+                        <option value="australia">Australia</option>
+                    </select>
+                </td>
+                <td><i class="fa fa-building" aria-hidden="true"></i><input type="text" name="companyname" placeholder="Your Company's Name"/></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-home" aria-hidden="true"></i>
+                    <textarea name="HomeAddress" rows="3" cols="25" placeholder="Home Address"></textarea>
+                </td>
+                <td><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <textarea name="OfficeAddress" rows="3" cols="25" placeholder="Office Address"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-key" aria-hidden="true"></i><input type="password" name="pword" placeholder="Password"/></td>
+                 
+                <td><i class="fa fa-key" aria-hidden="true"></i><input type="password" name="confirmpassword" placeholder="Confirm Password"/></td>
+            </tr>
+            <tr>
+            	<td colspan="2" align="left"><label>Upload ProfilePic URL :</label><input type="text" name="profilepic"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left"><input type="checkbox" name="t&c"/><label>I agree with terms and conditions.</label></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left"><input type="checkbox" name="notify"/><label>Receive best offers and updates.</label></td>
+            </tr>
+		    <tr>
+			    <td colspan="2"><button class="btn btn-primary" name="submit" value="register">Register</button></td>
+		    </tr>
+        </table>
+        </form>
+        <hr width="90%"/>
+        <label>Already have an account ?</label><a href="login.html" class="text-decoration-none"> Login</a>
+    </div>
+</body>
+</html>
