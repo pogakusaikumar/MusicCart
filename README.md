@@ -1,9 +1,9 @@
 # MusicCart
 # Introduction
-This project is based on a web application that provids a user-friendly interface, provide secure login and registrations to users with Javascript validation and JavaMail API.
+* This project is based on a web application that provids a user-friendly interface, provide secure login and registrations to users with Javascript validation and JavaMail API.
 The Java Mail API is for user authentication where the server sends an OTP to the user's email and verifies the OTP and also checks whether the mail id is present in the databse
 or not. And once the user credentials are verified it directs to the MusicCart home page which consists of list of songs which users can listen to and also add it to thier playlist.
-The session of the user is maintained using HTTP Cookies. So, when the user logsout the cookies are destroyed.
+* The session of the user is maintained using HTTP Cookies. So, when the user logsout the cookies are destroyed.
 # Dependencies
 Java, MySQL or OracleDB, JavaScript
 # Usage
